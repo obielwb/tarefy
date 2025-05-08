@@ -1,0 +1,36 @@
+<%- include('../layouts/main') %>
+<h2>Minhas Tarefas</h2>
+<a href="/tasks/create" class="btn">Nova Tarefa</a>
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Status</th>
+      <th>Prioridade</th>
+      <th>Data de Vencimento</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% tasks.forEach(task => { %>
+    <tr>
+      <td><%= task.titulo %></td>
+      <td><%= task.status %></td>
+      <td><%= task.prioridade %></td>
+      <td>
+        <%= task.data_vencimento ?
+        task.data_vencimento.toISOString().split('T')[0] : '' %>
+      </td>
+      <td>
+        <a href="/tasks/edit/<%= task.id %>" class="btn">Editar</a>
+        <a
+          href="/tasks/delete/<%= task.id %>"
+          class="btn btn-danger"
+          onclick="return confirm('Tem certeza?')"
+          >Excluir</a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

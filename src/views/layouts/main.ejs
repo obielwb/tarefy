@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefy - Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tarefy</h1>
+      <nav>
+        <% if (typeof userId !== 'undefined') { %>
+        <a href="/tasks">Tarefas</a>
+        <a href="/projects">Projetos</a>
+        <a href="/users/logout">Sair</a>
+        <% } else { %>
+        <a href="/users/login">Login</a>
+        <a href="/users/register">Registrar</a>
+        <% } %>
+      </nav>
+    </header>
+    <main><%- body %></main>
+    <footer>
+      <p>© 2025 Tarefy. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

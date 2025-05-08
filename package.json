@@ -1,0 +1,19 @@
+{
+  "name": "tarefy",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de tarefas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "migrate": "node src/migrations/migrate.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.0",
+    "pg": "^8.13.0"
+  }
+}

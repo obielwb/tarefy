@@ -1,0 +1,18 @@
+<%- include('../layouts/main') %>
+<h2>Editar Projeto</h2>
+<% if (typeof error !== 'undefined') { %>
+<p class="error"><%= error %></p>
+<% } %>
+<form action="/projects/edit/<%= project.id %>" method="POST">
+  <label for="nome">Nome:</label>
+  <input
+    type="text"
+    id="nome"
+    name="nome"
+    value="<%= project.nome %>"
+    required
+  />
+  <label for="descricao">Descrição:</label>
+  <textarea id="descricao" name="descricao"><%= project.descricao %></textarea>
+  <button type="submit">Salvar</button>
+</form>

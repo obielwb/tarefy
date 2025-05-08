@@ -1,0 +1,26 @@
+<%- include('../layouts/main') %>
+<h2>Editar Tarefa</h2>
+<% if (typeof error !== 'undefined') { %>
+  <p class="error"><%= error %></p>
+<% } %>
+<form action="/tasks/edit/<%= task.id %>" method="POST">
+  <label for="titulo">Título:</label>
+  <input type="text" id="titulo" name="titulo" value="<%= task.titulo %>" required>
+  <label for="descricao">Descrição:</label>
+  <textarea id="descricao" name="descricao"><%= task.descricao %></textarea>
+  <label for="status">Status:</label>
+  <select id="status" name="status">
+    <option value="pendente" <%= task.status === 'pendente' ? 'selected' : '' %>>Pendente</option>
+    <option value="em_andamento" <%= task.status === 'em_andamento' ? 'selected' : '' %>>Em Andamento</option>
+    <option value="concluida" <%= task.status === 'concluida' ? 'selected' : '' %>>Concluída</option>
+  </select>
+  <label for="prioridade">Prioridade:</label>
+  <select id="prioridade" name="prioridade">
+    <option value="baixa" <%= task.prioridade === 'baixa' ? 'selected' : '' %>>Baixa</option>
+    <option value="media" <%= task.prioridade === 'media' ? 'selected' : '' %>>Média</option>
+    <option value="alta" <%= task.prioridade === 'alta' ? 'selected' : '' %>>Alta</option>
+  </select>
+  <label for="data_vencimento">Data de Vencimento:</label>
+  <input type="date" id="data_vencimento" name="data_vencimento" value="<%= task.data_vencimento ? task.data_vencimento.toISOString().split('T')[0] : '' %>">
+  <button type="submit">Salvar</button>
+</form>
