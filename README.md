@@ -45,41 +45,42 @@ A estrutura do projeto está organizada para facilitar a manutenção e escalabi
 
 ```
 tarefy/
-├── config/
-│ └── database.js # Configuração da conexão com o PostgreSQL
-├── migrations/
-│ └── migrate.js # Script de migração para criar tabelas no banco
-├── models/
-│ ├── user.js # Modelo para operações com usuários
-│ ├── task.js # Modelo para operações com tarefas
-│ └── project.js # Modelo para operações com projetos
-├── controllers/
-│ ├── userController.js # Controlador para autenticação e gerenciamento de usuários
-│ ├── taskController.js # Controlador para gerenciamento de tarefas
-│ └── projectController.js # Controlador para gerenciamento de projetos
-├── routes/
-│ ├── userRoutes.js # Rotas para autenticação e usuários
-│ ├── taskRoutes.js # Rotas para tarefas
-│ └── projectRoutes.js # Rotas para projetos
-├── views/
-│ ├── layouts/
-│ │ └── main.ejs # Layout principal da aplicação
-│ ├── user/
-│ │ ├── login.ejs # View para login
-│ │ └── register.ejs # View para registro
-│ ├── task/
-│ │ ├── list.ejs # View para listagem de tarefas
-│ │ ├── create.ejs # View para criação de tarefas
-│ │ └── edit.ejs # View para edição de tarefas
-│ ├── project/
-│ │ ├── list.ejs # View para listagem de projetos
-│ │ ├── create.ejs # View para criação de projetos
-│ │ └── edit.ejs # View para edição de projetos
+├── src/
+│   ├── config/
+│   │   └── database.js               # Configuração da conexão com o PostgreSQL
+│   ├── migrations/
+│   │   └── migrate.js               # Script de migração para criar tabelas no banco
+│   ├── models/
+│   │   ├── user.js                  # Modelo para operações com usuários
+│   │   ├── task.js                  # Modelo para operações com tarefas
+│   │   └── project.js               # Modelo para operações com projetos
+│   ├── controllers/
+│   │   ├── userController.js        # Controlador para autenticação e gerenciamento de usuários
+│   │   ├── taskController.js        # Controlador para gerenciamento de tarefas
+│   │   └── projectController.js     # Controlador para gerenciamento de projetos
+│   ├── routes/
+│   │   ├── userRoutes.js            # Rotas para autenticação e usuários
+│   │   ├── taskRoutes.js            # Rotas para tarefas
+│   │   └── projectRoutes.js         # Rotas para projetos
+│   ├── views/
+│   │   ├── layouts/
+│   │   │   └── main.ejs             # Layout principal da aplicação
+│   │   ├── user/
+│   │   │   ├── login.ejs            # View para login
+│   │   │   └── register.ejs         # View para registro
+│   │   ├── task/
+│   │   │   ├── list.ejs             # View para listagem de tarefas
+│   │   │   ├── create.ejs           # View para criação de tarefas
+│   │   │   └── edit.ejs             # View para edição de tarefas
+│   │   ├── project/
+│   │   │   ├── list.ejs             # View para listagem de projetos
+│   │   │   ├── create.ejs           # View para criação de projetos
+│   │   │   └── edit.ejs             # View para edição de projetos
+│   └── server.js                    # Arquivo principal para iniciar o servidor
 ├── public/
-│ └── styles.css # Arquivo de estilização CSS
-├── .env # Arquivo de configuração de variáveis de ambiente
-├── server.js # Arquivo principal para iniciar o servidor
-└── package.json # Configuração do projeto e dependências
+│   └── styles.css                   # Arquivo de estilização CSS
+├── .env                             # Arquivo de configuração de variáveis de ambiente
+└── package.json                     # Configuração do projeto e dependências
 ```
 
 ## Como Executar o Projeto Localmente
@@ -96,11 +97,11 @@ Pré-requisitos
 Clone o Repositório :
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/obielwb/tarefy
 cd tarefy
 ```
 
-## Instale as Dependências:
+### Instale as Dependências:
 
 Execute o comando abaixo para instalar as dependências listadas no package.json:
 bash
@@ -109,7 +110,7 @@ bash
 npm install
 ```
 
-## Configure o Banco de Dados:
+### Configure o Banco de Dados:
 
 Para rodar o projeto, configure as variáveis de ambiente no arquivo .env. Crie o arquivo na raiz do projeto com o seguinte conteúdo:
 
@@ -125,7 +126,7 @@ SESSION_SECRET=chave-para-encriptar-senha
 
 Substitua seu_usuario, sua_senha e sua_chave_secreta pelos valores apropriados.
 
-## Execute as Migrações:
+### Execute as Migrações:
 
 Crie as tabelas no banco de dados executando o script de migração:
 
@@ -133,7 +134,7 @@ Crie as tabelas no banco de dados executando o script de migração:
 npm run migrate
 ```
 
-## Inicie o Servidor:
+### Inicie o Servidor:
 
 Inicie a aplicação com o comando:
 
