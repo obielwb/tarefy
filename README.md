@@ -100,47 +100,48 @@ git clone <URL_DO_REPOSITORIO>
 cd tarefy
 ```
 
-Instale as Dependências:
+## Instale as Dependências:
+
 Execute o comando abaixo para instalar as dependências listadas no package.json:
 bash
 
+```bash
 npm install
+```
 
-Configure o Banco de Dados:
-Crie um banco de dados no PostgreSQL chamado tarefy:
-sql
+## Configure o Banco de Dados:
 
-CREATE DATABASE tarefy;
+Para rodar o projeto, configure as variáveis de ambiente no arquivo .env. Crie o arquivo na raiz do projeto com o seguinte conteúdo:
 
-Configure as variáveis de ambiente no arquivo .env. Crie o arquivo na raiz do projeto com o seguinte conteúdo:
-env
-
+```env
 DB_USER=seu_usuario
 DB_HOST=localhost
 DB_NAME=tarefy
 DB_PASSWORD=sua_senha
 DB_PORT=5432
 PORT=3000
-SESSION_SECRET=sua_chave_secreta
+SESSION_SECRET=chave-para-encriptar-senha
+```
 
 Substitua seu_usuario, sua_senha e sua_chave_secreta pelos valores apropriados.
 
-Execute as Migrações:
+## Execute as Migrações:
+
 Crie as tabelas no banco de dados executando o script de migração:
-bash
 
+```bash
 npm run migrate
+```
 
-Inicie o Servidor:
+## Inicie o Servidor:
+
 Inicie a aplicação com o comando:
-bash
 
+```bash
 npm start
+```
 
 O servidor será iniciado em http://localhost:3000 (ou a porta definida no .env).
-
-Acesse a Aplicação:
-Abra o navegador e acesse http://localhost:3000.
 
 Registre um novo usuário em /users/register ou faça login em /users/login.
 
