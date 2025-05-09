@@ -4,6 +4,7 @@ const session = require("express-session");
 const userRoutes = require("./routes/userRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const projectRoutes = require("./routes/projectRoutes");
+const expressLayouts = require("express-ejs-layouts");
 const path = require("path");
 
 const app = express();
@@ -14,6 +15,9 @@ app.use(express.json());
 // Configuração do EJS
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+app.use(expressLayouts);
+app.set("layout", "layouts/main");
 
 app.use(express.static("public"));
 app.use(cookieParser());
