@@ -1,16 +1,25 @@
 const Project = require("../models/project");
+const Task = require("../models/task");
 
 class ProjectController {
   static async list(req, res) {
     const userId = req.session.userId;
     if (!userId) return res.redirect("/users/login");
     const projects = await Project.findByUserId(userId);
-    res.render("project/list", { projects });
+    res.render("project/list", { layout: "layouts/main", projects });
   }
 
-  static showCreate(req, res) {
+  static async showTasks(req, res) {
+    const userId = req.session.userId;
+    if (!userId) return res.redirect("/users/login");
+    const project = await Project.findById(req.params.id);
+    const tasks = await Task.findByProjectId(req.params.id);
+    res.render("project/tasks", { layout: "layouts/main", project, tasks });
+  }
+
+  static async showCreate(req, res) {
     if (!req.session.userId) return res.redirect("/users/login");
-    res.render("project/create");
+    res.render("project/create", { layout: "layouts/main" });
   }
 
   static async create(req, res) {
@@ -21,14 +30,17 @@ class ProjectController {
       await Project.create({ nome, descricao, user_id: userId });
       res.redirect("/projects");
     } catch (err) {
-      res.render("project/create", { error: err.message });
+      res.render("project/create", {
+        layout: "layouts/main",
+        error: err.message,
+      });
     }
   }
 
   static async showEdit(req, res) {
     if (!req.session.userId) return res.redirect("/users/login");
     const project = await Project.findById(req.params.id);
-    res.render("project/edit", { project });
+    res.render("project/edit", { layout: "layouts/main", project });
   }
 
   static async edit(req, res) {
@@ -38,7 +50,11 @@ class ProjectController {
       res.redirect("/projects");
     } catch (err) {
       const project = await Project.findById(req.params.id);
-      res.render("project/edit", { project, error: err.message });
+      res.render("project/edit", {
+        layout: "layouts/main",
+        project,
+        error: err.message,
+      });
     }
   }
 

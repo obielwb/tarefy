@@ -21,5 +21,11 @@
   </select>
   <label for="data_vencimento">Data de Vencimento:</label>
   <input type="date" id="data_vencimento" name="data_vencimento" />
+  <label for="project_ids">Projetos:</label>
+  <select id="project_ids" name="project_ids" multiple>
+    <% projects.forEach(project => { %>
+    <option value="<%= project.id %>"><%= project.nome %></option>
+    <% }) %>
+  </select>
   <button type="submit">Criar</button>
 </form>

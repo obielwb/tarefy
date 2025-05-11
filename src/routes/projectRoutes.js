@@ -3,6 +3,7 @@ const router = express.Router();
 const ProjectController = require("../controllers/projectController");
 
 router.get("/", ProjectController.list);
+router.get("/tasks/:id", ProjectController.showTasks); // Nova rota
 router.get("/create", ProjectController.showCreate);
 router.post("/create", ProjectController.create);
 router.get("/edit/:id", ProjectController.showEdit);

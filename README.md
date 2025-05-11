@@ -146,4 +146,4 @@ O servidor será iniciado em http://localhost:3000 (ou a porta definida no .env)
 
 Registre um novo usuário em /users/register ou faça login em /users/login.
 
-Após o login, você poderá gerenciar tarefas e projetos.
+Após o login, você poderá gerenciar tarefas e projetos. Todas as rotas estão detalhadas no arquivo `documentos/wad.md`

@@ -22,5 +22,11 @@
   </select>
   <label for="data_vencimento">Data de Vencimento:</label>
   <input type="date" id="data_vencimento" name="data_vencimento" value="<%= task.data_vencimento ? task.data_vencimento.toISOString().split('T')[0] : '' %>">
+  <label for="project_ids">Projetos:</label>
+  <select id="project_ids" name="project_ids" multiple>
+    <% projects.forEach(project => { %>
+      <option value="<%= project.id %>" <%= task.project_ids && task.project_ids.includes(project.id) ? 'selected' : '' %>><%= project.nome %></option>
+    <% }) %>
+  </select>
   <button type="submit">Salvar</button>
 </form>
