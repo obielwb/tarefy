@@ -1,5 +1,9 @@
 # Tarefy
 
+## Link para o vídeo de demonstração do projeto:
+
+https://www.loom.com/share/cc729a58ea934ec997e26db1a96fa0fc?sid=82c0b62e-b9ed-48a2-b7ff-fd08a68bee36
+
 ## Descrição do Sistema
 
 O Tarefy é um sistema de produtividade que inclui as seguintes funcionalidades principais:

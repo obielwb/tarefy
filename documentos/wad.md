@@ -200,7 +200,45 @@ As rotas são organizadas em arquivos separados para manter a modularidade e fac
 
 ### 3.7 Interface e Navegação (Semana 07)
 
-_Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar._
+A interface do sistema **Tarefy** foi desenvolvida utilizando o mecanismo de templates **EJS** (Embedded JavaScript), que permite a renderização dinâmica de views no lado do servidor. A estrutura de pastas para as views é organizada em `views/`, com subpastas para cada módulo principal: `user`, `task` e `project`. Cada view é responsável por exibir informações específicas e interagir com o usuário, utilizando HTML, CSS e EJS para incorporar lógica de apresentação.
+
+As views são renderizadas pelos controladores correspondentes, que processam os dados necessários e os passam para as templates EJS. Abaixo estão as telas principais do sistema:
+
+<p align="center">
+Tela de Login
+<img src="../public/images/wad/login-screenshot.png" alt="Telas do sistema Tarefy" /> <br/>
+<sub>Fonte: Material produzido pelo autor (2025).</sub>
+</p>
+
+<p align="center">
+Tela de Registro
+<img src="../public/images/wad/registro-screenshot.png" alt="Telas do sistema Tarefy" /> <br/>
+<sub>Fonte: Material produzido pelo autor (2025).</sub>
+</p>
+
+<p align="center">
+Tela de Listagem de Tarefas
+<img src="../public/images/wad/tasks-screenshot.png" alt="Telas do sistema Tarefy" /> <br/>
+<sub>Fonte: Material produzido pelo autor (2025).</sub>
+</p>
+
+<p align="center">
+Tela de Criação de Tarefas
+<img src="../public/images/wad/edit-tasks-screenshot.png" alt="Telas do sistema Tarefy" /> <br/>
+<sub>Fonte: Material produzido pelo autor (2025).</sub>
+</p>
+
+<p align="center">
+Tela de Listagem de Projetos
+<img src="../public/images/wad/projetos-screenshot.png" alt="Telas do sistema Tarefy" /> <br/>
+<sub>Fonte: Material produzido pelo autor (2025).</sub>
+</p>
+
+<p align="center">
+Tela de Criação de Projetos
+<img src="../public/images/wad/edit-projetos-screenshot.png" alt="Telas do sistema Tarefy" /> <br/>
+<sub>Fonte: Material produzido pelo autor (2025).</sub>
+</p>
 
 ---
 
@@ -208,18 +246,30 @@ _Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicand
 
 ### 4.1 Demonstração do Sistema Web (Semana 8)
 
-_VIDEO: Insira o link do vídeo demonstrativo nesta seção_
-_Descreva e ilustre aqui o desenvolvimento do sistema web completo, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar._
+Vídeo de demonstração do sistema web completo: <br>
+https://www.loom.com/share/cc729a58ea934ec997e26db1a96fa0fc?sid=82c0b62e-b9ed-48a2-b7ff-fd08a68bee36
 
 ### 4.2 Conclusões e Trabalhos Futuros (Semana 8)
 
-_Indique pontos fortes e pontos a melhorar de maneira geral._
-_Relacione também quaisquer outras ideias que você tenha para melhorias futuras._
+O sistema **Tarefy** foi desenvolvido com sucesso, implementando as principais funcionalidades de gerenciamento de tarefas e projetos. A arquitetura MVC garantiu uma separação clara entre a lógica de negócios, a apresentação e o controle de fluxo, facilitando a manutenção e escalabilidade do código. O uso de PostgreSQL como banco de dados relacional proporcionou uma estrutura robusta para armazenar usuários, tarefas e projetos, com suporte a relacionamentos muitos-para-muitos.
+
+O sistema foi testado para garantir que todas as funcionalidades atendam aos requisitos iniciais, incluindo autenticação de usuários, criação e gerenciamento de tarefas e projetos, e a associação entre eles. A interface web foi desenvolvida utilizando EJS para renderização dinâmica de views, proporcionando uma experiência de usuário intuitiva e responsiva.
+
+O projeto também incorporou boas práticas de segurança, como criptografia de senhas com bcrypt e gerenciamento de sessões para autenticação. A documentação foi elaborada para facilitar a compreensão do sistema, incluindo a modelagem do banco de dados, a arquitetura MVC, as rotas da WebAPI e a interface do usuário.
+
+### Trabalhos Futuros
+
+Para trabalhos futuros, algumas melhorias e funcionalidades adicionais podem ser consideradas:
+
+- **Implementação de Notificações**: Adicionar notificações para lembrar os usuários sobre tarefas pendentes ou próximas datas de vencimento.
+- **Filtros e Busca Avançada**: Implementar filtros para visualizar tarefas por status, prioridade ou data de vencimento, além de uma funcionalidade de busca por título ou descrição.
+- **Exportação de Dados**: Permitir que usuários exportem suas tarefas e projetos em formatos como CSV ou PDF para relatórios.
+- **Integração com APIs Externas**: Explorar integrações com serviços externos, como calendários (Google Calendar) ou ferramentas de produtividade (Trello, Asana).
 
 ## <a name="c5"></a>5. Referências
 
-_Incluir as principais referências de seu projeto, para que o leitor possa consultar caso ele se interessar em aprofundar._<br>
-
----
+- **Documentação do Node.js**: https://nodejs.org/en/docs/
+- **Documentação do Express.js**: https://expressjs.com/
+- **Documentação do PostgreSQL**: https://www.postgresql.org/docs/
 
 ---
